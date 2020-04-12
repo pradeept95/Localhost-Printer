@@ -2,6 +2,8 @@
 using System;
 using System.Configuration;
 using System.IO;
+using System.IO.Compression;
+using System.Linq;
 using WPFUI.Helpers;
 using WPFUI.Models;
 
@@ -23,10 +25,10 @@ namespace WPFUI.ViewModels
                 NotifyOfPropertyChange(() => ResultViewer);
             }
         }
-         
-        public string ServiceInstallationDirectory{ get; set; }
+
+        public string ServiceInstallationDirectory { get; set; }
         public string ServiceInstallerDirectory { get; set; }
-         
+
         public InstallViewModel()
         {
             setting = ApplicationConfig.Instance;
@@ -38,59 +40,127 @@ namespace WPFUI.ViewModels
         {
 
 
-            SetResutlText($"\n===== Installing service started =====", true);
+            SetResutlText($"\n===== Installing service started =====", true); 
             try
             {
-                if (!Directory.Exists(ServiceInstallerDirectory))
-                {
-                    SetResutlText($".Exe file location doesnot exist  \n >>>> {ServiceInstallerDirectory}");
-                    return;
-                }
-                else
-                {
-                    if (!Directory.Exists(ServiceInstallationDirectory))
-                    {
-                        Directory.CreateDirectory(ServiceInstallationDirectory);
-                    }
-
-                    SetResutlText($"Copying file to install directory");
-                    //Now Create all of the directories
-                    foreach (string dirPath in Directory.GetDirectories(ServiceInstallerDirectory, "*",
-                        SearchOption.AllDirectories))
-                        Directory.CreateDirectory(dirPath.Replace(ServiceInstallerDirectory, ServiceInstallationDirectory));
-
-                    //Copy all the files & Replaces any files with the same name
-                    foreach (string newPath in Directory.GetFiles(ServiceInstallerDirectory, "*.*",
-                        SearchOption.AllDirectories))
-                        File.Copy(newPath, newPath.Replace(ServiceInstallerDirectory, ServiceInstallationDirectory), true);
-                    SetResutlText($"Copy file completed");
-
-                }
-
+                CopyAndUnzipFile();
                 SetResutlText("Service installation begin");
 
-                var arguments = "-i";
-                var filename = System.IO.Path.Combine(ServiceInstallationDirectory, "HotBagWebPrinting.exe");
-                SetResutlText(ProcessHelpers.RunExternalExe(filename, arguments, true)); 
-                SetResutlText("Installation Completed");
-                 
-                //Starting Service
-                SetResutlText($"\n===== Starting service started =====", true);
-                string cmd = $"/k net start HotBagWebPrinting";
-                SetResutlText(ProcessHelpers.RunCmd(cmd, true));
-                SetResutlText($"\n===== Starting service ended =====", true);
+                string installer = GetInstaller();
+                if (string.IsNullOrEmpty(installer))
+                {
+                    SetResutlText("No application found to install");
+                    SetResutlText($"\n===== Installing service ended with error =====", true);
+                    return;
+                } 
+
+                string cmd = GetInstallationCmd(installer);
+                SetResutlText(ProcessHelpers.RunCmd(cmd, true)); 
 
             }
             catch (Exception ex)
             {
                 SetResutlText($"{ex}");
             }
-            SetResutlText($"\n===== Installing service ended =====", true); 
+            SetResutlText($"\n===== Installing service ended =====", true);
+
+            SetResutlText($"\n===== Starting service started =====", true);
+            string startCmd = $"/k net start {setting.Settings.ServiceName}";
+            SetResutlText(ProcessHelpers.RunCmd(startCmd, true));
+            SetResutlText($"\n===== Starting service ended =====", true);
         }
-          
-        public void SelectInstallerDirectory()
+
+        public string GetInstallationCmd(string exePath)
         {
-           
+            return $"/k sc.exe create {setting.Settings.ServiceName} binpath= {exePath} start=auto";
+        }
+
+        public string GetInstaller()
+        {
+            //finding .exe file
+            string[] files = Directory.GetFiles(ServiceInstallationDirectory);
+            return files.ToList().FirstOrDefault(x => x.Contains(".exe"));
+        }
+
+        private string _selectedFileName;
+
+        public string SelectedFileName
+        {
+            get { return _selectedFileName; }
+            set
+            {
+                _selectedFileName = value;
+                NotifyOfPropertyChange(() => SelectedFileName);
+            }
+        }
+
+        public void CopyAndUnzipFile()
+        {
+
+            if (!File.Exists(SelectedFileName))
+            {
+                SetResutlText($"Please select .Zip file to install");
+                return;  
+            } 
+
+            if (Directory.Exists(ServiceInstallationDirectory))
+            {
+                DeleteDirectory(ServiceInstallationDirectory);
+            }
+            Directory.CreateDirectory(ServiceInstallationDirectory);
+
+
+            foreach (ZipArchiveEntry entry in ZipFile.OpenRead(SelectedFileName).Entries)
+            {
+                var filePath = Path.Combine(ServiceInstallationDirectory, entry.FullName);
+                SetResutlText($"Extracting and Copying File : {filePath}");
+
+                entry.ExtractToFile(filePath);
+            }
+
+            SelectedFileName = "";
+        }
+
+        public static void DeleteDirectory(string target_dir)
+        {
+            string[] files = Directory.GetFiles(target_dir);
+            string[] dirs = Directory.GetDirectories(target_dir);
+
+            foreach (string file in files)
+            {
+                File.SetAttributes(file, FileAttributes.Normal);
+                File.Delete(file);
+            }
+
+            foreach (string dir in dirs)
+            {
+                DeleteDirectory(dir);
+            }
+
+            Directory.Delete(target_dir, false);
+        }
+
+
+        public void SelectInstaller()
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".zip";
+            //dlg.Filter = "Zip File (*.zip)";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+                SelectedFileName = filename;
+            }
+
         }
 
         private void SetResutlText(string text, bool isHeader = false)

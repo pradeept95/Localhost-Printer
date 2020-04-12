@@ -1,10 +1,12 @@
 ﻿using Caliburn.Micro;
 using WPFUI.Helpers;
+using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
     public class StartViewModel : Screen
     {
+        ApplicationConfig setting;
         private string _resultViewer;
         public string ResultViewer
         {
@@ -21,13 +23,13 @@ namespace WPFUI.ViewModels
 
         public StartViewModel()
         {
-
+            setting = ApplicationConfig.Instance;
         }
 
         public void StartService()
         {
             SetResutlText($"\n===== Starting service started =====", true); 
-            string cmd = $"/k net start HotBagWebPrinting";
+            string cmd = $"/k net start {setting.Settings.ServiceName}";
             SetResutlText(ProcessHelpers.RunCmd(cmd, true));
             SetResutlText($"\n===== Starting service ended =====", true);
         }

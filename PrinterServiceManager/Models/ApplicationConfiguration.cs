@@ -13,7 +13,7 @@
             return new ApplicationConfigurationModel
             {
                 ServiceDisplayName = @"HotBag Web Printer",
-                ServiceName = @"HotBagWebPrinterService",
+                ServiceName = @"HotBagLocalhostPrinter",
                 InstallationLocation = @"C:\temp\HotBag\WebPrintingService",
                 InstallerLocation = @"C:\temp\HotBag\WebPrintingService",
                 PrinterSettingDirectory = @"C:\temp\HotBag\PrinterConfig"

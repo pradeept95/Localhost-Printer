@@ -1,10 +1,12 @@
 ﻿using Caliburn.Micro;
 using WPFUI.Helpers;
+using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
     public class CheckStatusViewModel : Screen
     {
+        ApplicationConfig setting;
         private string _resultViewer;
         public string ResultViewer
         {
@@ -21,13 +23,13 @@ namespace WPFUI.ViewModels
 
         public CheckStatusViewModel()
         {
-
+            setting = ApplicationConfig.Instance;
         }
 
         public void ServiceCheckStatus()
         {
             SetResutlText($"\n===== Getting service status started =====", true); 
-            string cmd = $"/k sc query HotBagWebPrinting";
+            string cmd = $"/k sc query {setting.Settings.ServiceName}";
             SetResutlText(ProcessHelpers.RunCmd(cmd, true));
             SetResutlText($"\n===== Getting service status ended =====", true);
         }

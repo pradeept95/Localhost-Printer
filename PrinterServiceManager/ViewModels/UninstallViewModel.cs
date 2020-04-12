@@ -5,19 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPFUI.Helpers;
+using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
     public class UninstallViewModel : Screen
     {
-        private string _resultViewer; 
+        ApplicationConfig setting;
+        private string _resultViewer;
         public string ResultViewer
         {
-            get 
-            { 
-                return _resultViewer; 
+            get
+            {
+                return _resultViewer;
             }
-            set 
+            set
             {
                 _resultViewer = value;
                 NotifyOfPropertyChange(() => ResultViewer);
@@ -26,13 +28,14 @@ namespace WPFUI.ViewModels
 
         public UninstallViewModel()
         {
-            
+            setting = ApplicationConfig.Instance;
+
         }
 
         public void UnInstallService()
         {
-            SetResutlText($"\n===== Uninstalling service started =====", true); 
-            string cmd = $"/k sc delete HotBagWebPrinting";
+            SetResutlText($"\n===== Uninstalling service started =====", true);
+            string cmd = $"/k sc delete {setting.Settings.ServiceName}";
             SetResutlText(ProcessHelpers.RunCmd(cmd, true));
             SetResutlText($"\n===== Uninstalling service ended =====", true);
         }

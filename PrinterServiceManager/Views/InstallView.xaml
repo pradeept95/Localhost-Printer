@@ -34,8 +34,23 @@
                 SERVICE INSTALL WIZARD
             </TextBlock>
         </StackPanel>
+        <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <TextBox
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto"  
+                IsReadOnly="True"
+                x:Name="SelectedFileName"
+                Width="300"
+                Height="30"
+                />
+            <Button x:Name="SelectInstaller" Margin="5" Padding="5" Height="40">
+                <TextBlock Margin="10" FontSize="15">Select service Installer</TextBlock>
+            </Button>
+        </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <StackPanel Grid.Row="3" Grid.Column="1">
             <TextBlock 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -47,12 +62,12 @@
             </TextBlock>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="1">
+        <StackPanel Grid.Row="4" Grid.Column="1">
             <Button x:Name="InstallService" Margin="5" Padding="5" Height="40">
                 <TextBlock Margin="10" FontSize="15">YES, Confirm and Install</TextBlock>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="4" Grid.Column="1">
+        <StackPanel Grid.Row="5" Grid.Column="1">
             <TextBox
                 TextWrapping="Wrap"
                 AcceptsReturn="True"
