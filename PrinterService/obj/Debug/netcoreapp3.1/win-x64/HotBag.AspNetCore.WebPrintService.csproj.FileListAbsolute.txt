@@ -550,7 +550,6 @@ C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\bin\Debug\netcoreap
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\bin\Debug\netcoreapp3.1\win-x64\mscorrc.debug.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\bin\Debug\netcoreapp3.1\win-x64\mscorrc.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\bin\Debug\netcoreapp3.1\win-x64\ucrtbase.dll
-C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\obj\Debug\netcoreapp3.1\win-x64\HotBag.AspNetCore.WebPrintService.csprojAssemblyReference.cache
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\obj\Debug\netcoreapp3.1\win-x64\HotBag.AspNetCore.WebPrintService.csproj.CoreCompileInputs.cache
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\obj\Debug\netcoreapp3.1\win-x64\HotBag.AspNetCore.WebPrintService.AssemblyInfoInputs.cache
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterService\obj\Debug\netcoreapp3.1\win-x64\HotBag.AspNetCore.WebPrintService.AssemblyInfo.cs

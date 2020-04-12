@@ -26,37 +26,37 @@ namespace WPFUI.ViewModels
          
         public ShellViewModel()
         {
-            ActivateItem(new AppConfigurationViewModel());
+            ActivateItemAsync(new AppConfigurationViewModel(), new System.Threading.CancellationToken());
             _windowState = WindowState.Maximized;
         } 
  
-        public void InstallService()
+        public async Task InstallService()
         {
-            ActivateItem(new InstallViewModel());
+            await ActivateItemAsync(new InstallViewModel(), new System.Threading.CancellationToken());
         }
-        public void UnInstallService()
+        public async Task UnInstallService()
         {
-            ActivateItem(new UninstallViewModel());
-        }
-
-        public void StartService()
-        {
-            ActivateItem(new StartViewModel());
-        }
-        
-        public void StopService()
-        {
-            ActivateItem(new StopViewModel());
+            await ActivateItemAsync(new UninstallViewModel(), new System.Threading.CancellationToken());
         }
 
-        public void CheckServiceStatus()
+        public async Task StartService()
         {
-            ActivateItem(new CheckStatusViewModel());
+            await ActivateItemAsync(new StartViewModel(), new System.Threading.CancellationToken());
         }
         
-        public void ConfigruationSetting()
+        public async Task StopService()
         {
-            ActivateItem(new AppConfigurationViewModel());
+            await ActivateItemAsync(new StopViewModel(), new System.Threading.CancellationToken());
+        }
+
+        public async Task CheckServiceStatus()
+        {
+            await ActivateItemAsync(new CheckStatusViewModel(), new System.Threading.CancellationToken());
+        }
+        
+        public async Task ConfigruationSetting()
+        {
+            await ActivateItemAsync(new AppConfigurationViewModel(), new System.Threading.CancellationToken());
         }
 
         public void MinimizeWindow()

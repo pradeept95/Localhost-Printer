@@ -8,7 +8,6 @@ C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\bin\Debug\netcoreap
 C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\bin\Debug\netcoreapp2.2\WebApp.pdb
 C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\bin\Debug\netcoreapp2.2\WebApp.Views.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\bin\Debug\netcoreapp2.2\WebApp.Views.pdb
-C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\obj\Debug\netcoreapp2.2\WebApp.csprojAssemblyReference.cache
 C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\obj\Debug\netcoreapp2.2\WebApp.csproj.CoreCompileInputs.cache
 C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\obj\Debug\netcoreapp2.2\WebApp.RazorAssemblyInfo.cache
 C:\Users\prade\source\repos\HotBagWebPrinting\WebApplication\obj\Debug\netcoreapp2.2\WebApp.RazorAssemblyInfo.cs
