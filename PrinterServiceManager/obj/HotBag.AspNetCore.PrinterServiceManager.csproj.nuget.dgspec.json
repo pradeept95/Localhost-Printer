@@ -48,6 +48,10 @@
             "Caliburn.Micro.Core": {
               "target": "Package",
               "version": "[4.0.105-alpha, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             }
           },
           "imports": [

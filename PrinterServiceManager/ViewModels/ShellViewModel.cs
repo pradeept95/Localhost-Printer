@@ -59,6 +59,11 @@ namespace WPFUI.ViewModels
             await ActivateItemAsync(new AppConfigurationViewModel(), new System.Threading.CancellationToken());
         }
 
+        public async Task SetPrinter()
+        {
+            await ActivateItemAsync(new PrinterSetupViewModel(), new System.Threading.CancellationToken());
+        } 
+
         public void MinimizeWindow()
         {
             _windowState = WindowState.Minimized;

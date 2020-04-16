@@ -97,7 +97,7 @@
             <Button x:Name="StopService" Margin="5" Padding="5" Height="40">
                 <TextBlock Margin="10" FontSize="15">Stop</TextBlock>
             </Button>
-            <Button x:Name="d" Margin="5" Padding="5" Height="40">
+            <Button x:Name="SetPrinter" Margin="5" Padding="5" Height="40">
                 <TextBlock Margin="10" FontSize="15">Printer Setup</TextBlock>
             </Button>
             <Button x:Name="CheckServiceStatus" Margin="5" Padding="5" Height="40">

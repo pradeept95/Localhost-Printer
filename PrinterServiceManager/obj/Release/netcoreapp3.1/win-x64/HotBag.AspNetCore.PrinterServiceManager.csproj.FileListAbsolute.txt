@@ -8,6 +8,7 @@ C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\Caliburn.Micro.Platform.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\Caliburn.Micro.Core.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\Microsoft.Xaml.Behaviors.dll
+C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\System.Management.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\Microsoft.CSharp.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\Microsoft.VisualBasic.Core.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\bin\Release\netcoreapp3.1\win-x64\Microsoft.VisualBasic.dll
@@ -506,6 +507,7 @@ C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\AppConfigurationView.g.cs
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\CheckStatusView.g.cs
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\InstallView.g.cs
+C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\PrinterSetupView.g.cs
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\ShellView.g.cs
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\StartView.g.cs
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\StopView.g.cs
@@ -518,6 +520,7 @@ C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\AppConfigurationView.baml
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\CheckStatusView.baml
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\InstallView.baml
+C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\PrinterSetupView.baml
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\ShellView.baml
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\StartView.baml
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\Views\StopView.baml
@@ -530,4 +533,3 @@ C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\HotBag.AspNetCore.PrinterServiceManager.dll
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\HotBag.AspNetCore.PrinterServiceManager.pdb
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\HotBag.AspNetCore.PrinterServiceManager.genruntimeconfig.cache
-C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\obj\Release\netcoreapp3.1\win-x64\HotBag.AspNetCore.PrinterServiceManager.csprojAssemblyReference.cache

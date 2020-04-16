@@ -21,6 +21,9 @@
     <Page Update="Views\InstallView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\PrinterSetupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ShellView.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\prade\source\repos\HotBagWebPrinting\PrinterServiceManager\App.xaml
-8-1677860181
+9-740704922
 
-22789309344
-202963962840
-Resources\Theme\ButtonTheme.xaml;Views\AppConfigurationView.xaml;Views\CheckStatusView.xaml;Views\InstallView.xaml;Views\ShellView.xaml;Views\StartView.xaml;Views\StopView.xaml;Views\UninstallView.xaml;
+16-1762468126
+203-1929078044
+Resources\Theme\ButtonTheme.xaml;Views\AppConfigurationView.xaml;Views\CheckStatusView.xaml;Views\InstallView.xaml;Views\PrinterSetupView.xaml;Views\ShellView.xaml;Views\StartView.xaml;Views\StopView.xaml;Views\UninstallView.xaml;
 
 False
 

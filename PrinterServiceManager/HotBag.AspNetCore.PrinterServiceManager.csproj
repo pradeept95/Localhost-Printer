@@ -24,6 +24,7 @@
   <ItemGroup>
     <PackageReference Include="Caliburn.Micro" Version="4.0.105-alpha" />
     <PackageReference Include="Caliburn.Micro.Core" Version="4.0.105-alpha" />
+    <PackageReference Include="System.Management" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,27 +45,6 @@
     <Compile Update="App.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\AppConfigurationView.xaml.cs">
-      <DependentUpon>AppConfigurationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\CheckStatusView.xaml.cs">
-      <DependentUpon>CheckStatusView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\InstallView.xaml.cs">
-      <DependentUpon>InstallView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\ShellView.xaml.cs">
-      <DependentUpon>ShellView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\StartView.xaml.cs">
-      <DependentUpon>StartView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\StopView.xaml.cs">
-      <DependentUpon>StopView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\UninstallView.xaml.cs">
-      <DependentUpon>UninstallView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
